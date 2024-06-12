@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- To maintain the integrity of the website's
+        functionality, please do not touch anything 
+        between the <head></head> tags unless you 
+        know exactly what you're doing.
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<head>
+
+    <!-- BASIC PAGE NEEDS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>SUPIR Lab | University of Sydney</title>
+
+
+    <!-- FAVICONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="shortcut icon" type="image/png" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- FONTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700" rel="stylesheet">
+
+
+    <!-- CSS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+
+
+    <!-- Javascript
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <!-- Scripts 
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- Smooth Scrolling w/ Anchors -->
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+
+    <!-- Timeline Function -->
+    <script>
+        $(document).ready(function () {
+
+            'use strict';
+
+            // define variables
+            var items = document.querySelectorAll(".timeline__item");
+
+            // check if an element is in viewport
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function callbackFunc() {
+                for (var i = 0; i < items.length; i++) {
+                    if (isElementInViewport(items[i])) {
+                        items[i].classList.add("in-view");
+                    }
+                }
+            }
+
+            // listen for events
+            window.addEventListener("load", callbackFunc);
+            window.addEventListener("resize", callbackFunc);
+            window.addEventListener("scroll", callbackFunc);
+
+        })
+    </script>
+
+
+    <!-- Back-to-Top Function -->
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 600) {        // If page is scrolled more than 50px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#return-to-top').click(function () {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop: 0                       // Scroll to top of body
+            }, 500);
+        });
+    </script>
+
+</head>
+
+
+
+
+<body>
+
+
+    <!-- BACK TO TOP
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <a href="#" id="return-to-top">
+            <i class="fas fa-arrow-circle-up"></i>
+    </a>
+
+
+    <!-- HEADER
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+    <header class="header">
+
+
+
+        <!-- University of Sydney Logo Image -->
+
+
+        <div class="header__logo-box">
+            <img src="img/usyd_logo.png" alt="University of Sydney Logo" class="header__logo">
+        </div>
+
+
+        <div class="row">
+
+            <!-- Sydney University Psychology of Intergroup Relations Lab Text -->
+
+            <div class="header__text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary--main header__animation-1">
+                        <span class="header__span">S</span>ydney</span>
+                    <span class="heading-primary--main header__animation-2">
+                        <span class="header__span">U</span>niversity</span>
+                    <span class="heading-primary--main header__animation-3">
+                        <span class="header__span">P</span>sychology of</span>
+                    <span class="heading-primary--main header__animation-4">
+                        <span class="header__span">I</span>ntergroup</span>
+                    <span class="heading-primary--main header__animation-5">
+                        <span class="header__span">R</span>elations</span>
+                    <span class="heading-primary--main header__animation-6">
+                        <span class="header__span">Lab</span>
+                    </span>
+                </h1>
+            </div>
+
+
+        </div>
+
+    </header>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navigation">
+        <ul class="navigation__list">
+            <li class="navigation__item">
+                <a href="#section-about" class="navigation__link hvr-underline-from-left">About Us</a>
+            </li>
+            <li class="navigation__item">
+                <a href="#section-people" class="navigation__link hvr-underline-from-left">People</a>
+            </li>
+            <li class="navigation__item">
+                <a href="#section-publications" class="navigation__link hvr-underline-from-left">Publications</a>
+            </li>
+            <li class="navigation__item">
+                <a href="#section-opportunities" class="navigation__link hvr-underline-from-left">Opportunities</a>
+            </li>
+            <li class="navigation__item">
+                <a href="#section-contact" class="navigation__link hvr-underline-from-left">Contact</a>
+            </li>
+            <li class="navigation__item">
+                <a href="/news" class="navigation__link hvr-underline-from-left">News</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <!-- ABOUT SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+    <section class="section-about" id="section-about">
+
+        <div class="row">
+
+
+
+            <div class="col-1-of-2">
+
+                <div class="u-left-text u-margin-top-med">
+                    <h2 class="heading-secondary">
+                        What We Do
+                        <s>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </s>
+                    </h2>
+                </div>
+
+
+                <p class="paragraph u-margin-top-small">
+
+                    The Sydney University Psychology of Intergroup Relations (SUPIR) Lab is dedicated to the psychological study of intergroup
+                    relations, diversity, and stigma.
+
+                </p>
+
+
+                <p class="paragraph">
+
+                    We integrate a range of empirical methodologies from social psychology, social cognition, developmental psychology, field
+                    research, and psychophysiology. While our research has an Australian focus, its scope is international,
+                    with broad applications for social policy and interventions to promote social harmony.
+
+                </p>
+
+
+
+            </div>
+
+
+            <div class="col-1-of-2">
+
+                <!-- Research Aim List -->
+
+                <ul class="list-main">
+                    <h3 class="list-main__heading">Our Research Aims To...</h3>
+                    <li>
+                        &nbsp; Understand the dynamic processes that contribute to stereotyping, prejudice, and discrimation between different social
+                        groups.
+                    </li>
+                    <li>
+                        &nbsp; Formulate and evaluate strategies to reduce intergroup conflict and promote positive intergroup relations.</li>
+                    <li>
+                        &nbsp; Develop and evaluate new measures for examining intergroup relations.</li>
+                    <li>
+                        &nbsp; Explore the bidirectional nature of intergroup relations and highlight its importance for promoting positive social
+                        change.
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PEOPLE SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+
+    <section class="section-people" id="section-people">
+
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary heading-secondary--white">
+                Who We Are
+            </h2>
+        </div>
+
+
+
+        <div class="row">
+
+                <h2 class="heading-tertiary heading-tertiary--white u-margin-left-big u-margin-bottom-med u-underline-primary">Lab Director</h2>      
+
+            <div class="col-1-of-4">
+
+
+                <!-- FIONA -->
+
+                <div class="card" id="fiona">
+                    <img src="img/Fiona.png" alt="Fiona White" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Fiona White</p>
+                    <p>
+                        <a href="#popup_fiona" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+                <h2 class="heading-tertiary heading-tertiary--white u-margin-left-big u-margin-bottom-med u-underline-primary">Doctoral Students</h2>  
+
+            <div class="col-1-of-4">
+
+                <!-- LAUREN -->
+
+
+                <div class="card" id="lauren">
+                    <img src="img/lauren.png" alt="Lauren Harvey" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Lauren J. Harvey</p>
+                    <p>
+                        <a href="#popup_lauren" class="card__button">Info</a>
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="col-1-of-4">
+
+                <!-- RUTH -->
+
+
+                <div class="card" id="ruth">
+                    <img src="img/ruth.png" alt="Ruth Kuntzman" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Ruth Kuntzman</p>
+                    <p>
+                        <a href="#popup_ruth" class="card__button">Info</a>
+                    </p>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-1-of-4">
+
+                <!-- RACHEL -->
+
+                <div class="card" id="rachel">
+                    <img src="img/rachel.png" alt="Rachel Maunder" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Rachel Maunder</p>
+                    <p>
+                        <a href="#popup_rachel" class="card__button">Info</a>
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="col-1-of-4">
+
+                <!-- STEFANO -->
+
+                <div class="card" id="stefano">
+                    <img src="img/stefano.jpg" alt="Stefano Verrelli" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Stefano Verrelli</p>
+                    <p>
+                        <a href="#popup_stefano" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+                <h2 class="heading-tertiary heading-tertiary--white u-margin-left-big u-margin-bottom-med u-underline-primary">Honours Students</h2>  
+
+
+            <div class="col-1-of-4">
+
+                <!-- ELISE -->
+
+                <div class="card" id="elise">
+                    <img src="img/Elise.png" alt="Elise Boccanfuso" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Elise Boccanfuso</p>
+                    <p>
+                        <a href="#popup_elise" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-1-of-4">
+
+                <!-- PETA -->
+
+
+                <div class="card" id="peta">
+                    <img src="img/Peta.png" alt="Peta O'Flynn" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Peta O'Flynn</p>
+                    <p>
+                        <a href="#popup_peta" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+            </div>
+
+
+            <div class="row">
+
+
+                    <h2 class="heading-tertiary heading-tertiary--white u-margin-left-big u-margin-bottom-med u-underline-primary">Research Assistants</h2>  
+            
+                                
+            <div class="col-1-of-4">
+
+                <!-- KARINA -->
+
+
+                <div class="card" id="karina">
+                    <img src="img/Karina.png" alt="Karina Zola" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Karina Zola</p>
+                    <p>
+                        <a href="#popup_karina" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+            
+
+            <div class="col-1-of-4">
+
+                <!-- DIANA -->
+
+                <div class="card" id="diana">
+                    <img src="img/Diana.png" alt="Diana Vassilenko" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Diana Vassilenko</p>
+                    <p>
+                        <a href="#popup_diana" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-1-of-4">
+
+                <!-- CAGLA -->
+
+                <div class="card" id="cagla">
+                    <img src="img/Challa.png" alt="Cagla Tekin" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Cagla Tekin</p>
+                    <p>
+                        <a href="#popup_cagla" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-1-of-4">
+
+                <!-- VICTORIA -->
+
+
+                <div class="card" id="victoria">
+                    <img src="img/Victoria.png" alt="Victoria Basile" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Victoria Basile</p>
+                    <p>
+                        <a href="#popup_victoria" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+                                
+            <div class="col-1-of-4">
+
+                <!-- OSCAR -->
+
+
+                <div class="card" id="oscar">
+                    <img src="img/Oscar.png" alt="Oscar Leppan" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Oscar Leppan</p>
+                    <p>
+                        <a href="#popup_oscar" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-1-of-4">
+
+                <!-- WATHAN -->
+
+                <div class="card" id="wathan">
+                    <img src="img/Wathan.png" alt="Wathan Seezar Kyaw" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Wathan Seezar Kyaw</p>
+                    <p>
+                        <a href="#popup_wathan" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-1-of-4">
+
+                <!-- CELESTE -->
+
+                <div class="card" id="celeste">
+                    <img src="img/Celeste.png" alt="Celeste Zeng" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Celeste Zeng</p>
+                    <p>
+                        <a href="#popup_celeste" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-1-of-4">
+
+                <!-- ALICE -->
+
+
+                <div class="card" id="alice">
+                    <img src="img/Alice.png" alt="Alice Chappell" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Alice Chappell</p>
+                    <p>
+                        <a href="#popup_alice" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+                                
+            <div class="col-1-of-4">
+
+                <!-- REBECCA -->
+
+
+                <div class="card" id="rebecca">
+                    <img src="img/Rebecca.png" alt="Rebecca Crabb" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Rebecca Crabb</p>
+                    <p>
+                        <a href="#popup_rebecca" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-1-of-4">
+
+                <!-- JESSIE -->
+
+                <div class="card" id="jessie">
+                    <img src="img/Jessie.png" alt="Jessie Wang" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Jessie Wang</p>
+                    <p>
+                        <a href="#popup_jessie" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-1-of-4">
+
+                <!-- JENNIFER -->
+
+                <div class="card" id="jennifer">
+                    <img src="img/Jennifer.png" alt="Jennifer Ma" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Jennifer Ma</p>
+                    <p>
+                        <a href="#popup_jennifer" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-1-of-4">
+
+                <!-- MIREI -->
+
+
+                <div class="card" id="mirei">
+                    <img src="img/Mirei.png" alt="Mirei Takashiba" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Mirei Takashiba</p>
+                    <p>
+                        <a href="#popup_mirei" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+                                
+            <div class="col-1-of-4">
+
+                <!-- SUSANNA -->
+
+
+                <div class="card" id="susanna">
+                    <img src="img/Susanna.png" alt="Susanna Feng" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Susanna Feng</p>
+                    <p>
+                        <a href="#popup_susanna" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+            </div>
+
+
+            <div class="row">
+
+                    <h2 class="heading-tertiary heading-tertiary--white u-margin-left-big u-margin-bottom-med u-underline-primary">Honorary Members</h2>  
+
+
+            <div class="col-1-of-4">
+
+                <!-- MAYZIN -->
+
+                <div class="card" id="mayzin">
+                    <img src="img/May-zin.png" alt="May-Zin Khine" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">May-Zin Khine</p>
+                    <p>
+                        <a href="#popup_mayzin" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-1-of-4">
+
+                <!-- BETTY -->
+
+                <div class="card" id="betty">
+                    <img src="img/Betty.png" alt="Betty Luu" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Betty Luu</p>
+                    <p>
+                        <a href="#popup_betty" class="card__button">Info</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- INSTRUCTIONS TO CREATE A NEW MEMBER CARD:
+            
+            IF THE ROW DOES NOT YET HAVE FOUR (4) PEOPLE IN IT:
+            ----------------------------------------------------------------
+                1) Simply copy and paste this code directly beneath the last </div> of the previous
+                member.
+                2) Replace all instances of previous member's name with the new member's name.
+
+                                    <div class="col-1-of-4">
+
+                                                    <div class="card">
+                    <img src="img/karina.jpg" alt="Karina Zola" class="card__img" style="width: 100%; border-radius: .5rem .5rem 0 0;">
+                    <p class="card__title-main">Karina Zola</p>
+                    <p class="card__title-sub">Research Assistant</p>
+                    <p><a href="#popup_karina" class="card__button">Info</a></p>
+                  </div>
+                                    </div>
+
+            IF THE ROW DOES HAVE FOUR (4) MEMBERS ALREADY:
+            ----------------------------------------------------------------
+               1) Create a new div titled <div class="row"></div>. THIS IS IMPORTANT. If you
+                  do not create a new row, it will break the formating.
+               2) Between the <div class="row"> and </div>, insert the above mentioned code.
+               3) Replace all instances of previous member's name with the new member's name.
+
+        -->
+
+    </section>
+
+
+    <!-- PUBLICATIONS SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+    <section class="section-publications" id="section-publications">
+
+        <div class="u-center-text u-margin-bottom-med">
+            <h2 class="heading-secondary">
+                What We Publish
+            </h2>
+        </div>
+
+        <!-- Publications Timeline -->
+
+        <!-- INSTRUCTIONS TO ADD A NEW YEAR TO THE TIMELINE:
+            1) Simply copy and paste the following code to the top of the timeline if
+               it's to add the most recent year. For example, if you want to add 2019
+               then you would copy/paste the code directly under the <ul class="timeline__list">
+               and directly before the <li class="timeline__item"> that's currently right
+               under the <ul> tag.
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2018</time> Walton, J., Priest, N., Kowal, E., White, F. A., Fox, B., & Paradies, Y. (2018). Whiteness
+                        and national identity: Teacher discourses in Australian primary schools.
+                        <em>Race, Ethnicity and Education, 21,</em> 132-147.
+                        <a href="http://www.tandfonline.com/doi/full/10.1080/13613324.2016.1195357" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/whitness_and_national_identity.pdf" class="btn-text">PDF</a>
+                    </div>
+                </li>
+
+
+            INSTRUCTIONS TO ADD A NEW PUBLICATIONS:
+            1) Simply add <br><br> to the end of the previous publication and copy/paste the following code
+               and replace the information and links with those of the new publication.
+
+                        Walton, J., Priest, N., Kowal, E., White, F. A., Fox, B., & Paradies, Y. (2018). Whiteness
+                        and national identity: Teacher discourses in Australian primary schools.
+                        <em>Race, Ethnicity and Education, 21,</em> 132-147.
+                        <a href="http://www.tandfonline.com/doi/full/10.1080/13613324.2016.1195357" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/whitness_and_national_identity.pdf" class="btn-text">PDF</a>
+            -->
+
+        <div class="timeline">
+            <ul class="timeline__list">
+
+                <!-- 2018 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2018</time> Walton, J., Priest, N., Kowal, E., White, F. A., Fox, B., & Paradies, Y. (2018). Whiteness
+                        and national identity: Teacher discourses in Australian primary schools.
+                        <em>Race, Ethnicity and Education, 21,</em> 132-147.
+                        <a href="http://www.tandfonline.com/doi/full/10.1080/13613324.2016.1195357" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/whitness_and_national_identity.pdf" class="btn-text">PDF</a>
+                    </div>
+                </li>
+
+                <!-- 2017 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2017</time> Abu-Rayya, H.M., Abu-Rayya, M., White, F. A., & Walker, R. (in press). Comparative associations
+                        between achieved bicultural identity, achieved ego identity, and achieved religious identity and
+                        adaptation among Australian adolescent Muslims.
+                        <em>Psychological Reports​.</em>
+                        <a href="http://journals.sagepub.com/doi/abs/10.1177/0033294117724448" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/_10.1177_0033294117724448.pdf" class="btn-text">PDF</a>
+                        <br>
+                        <br> Chu, E., White, F. A., & Verrelli, S. (2017). Biculturalism amongst ethnic minorities: Its impact
+                        for individuals and intergroup relations.
+                        <em>Australian Journal of Psychology, 69,</em> 229-236.
+                        <a href="http://onlinelibrary.wiley.com/doi/10.1111/ajpy.12153/abstract" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/chu_et_al-2017-australian_journal_of_psychology.pdf" class="btn-text">PDF</a>
+                    </div>
+                </li>
+
+                <!-- 2016 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2016</time> Abu-Rayya, H. M., Almoty, S., White, F. A., & Abu-Rayya, M. H. (2016). The interconnection
+                        between Islamic religiosity and deviancy among Australian Muslim youth: A partial mediation role
+                        of life satisfaction.
+                        <em>International Journal for the Psychology of Religion, 26,</em> 337-347.
+                        <a href="http://www.tandfonline.com/doi/full/10.1080/10508619.2016.1157720" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/10.108010508619.2016.1157720.pdf" class="btn-text">PDF</a>
+                        <br>
+                        <br> Abu-Rayya, M. H., Walker, R., White, F. A., & Abu-Rayya, H. M. (2016). Cultural identification and
+                        religious identification contribute differentially to the adaptation of Australian adolescent Muslims.
+                        <em>International Journal of Intercultural Relations, 54,</em> 21-33.
+                        <a href="http://www.sciencedirect.com/science/article/pii/S0147176715300584" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/10.1016j.ijintrel.2016.07.002.pdf" class="btn-text">PDF</a>
+                        <br>
+                        <br> Priest, N., Walton, J., White, F., Kowal, E., Fox, B., Paradies, Y. (2016). ‘You are not born being
+                        racist, are you?’ Discussing racism with primary aged-children.
+                        <em>Race, Ethnicity and Education, 19,</em> 808-834.
+                        <a href="http://www.tandfonline.com/doi/abs/10.1080/13613324.2014.946496#.VS9Wr_mUck0" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/10.108013613324.2014.946496.pdf" class="btn-text">PDF</a>
+                    </div>
+                </li>
+
+                <!-- 2015 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2015</time> White, F. A., Abu-Rayya, H. M., Bliuc, A-M, & Faulkner, N. (2015). Emotion expression
+                        and intergroup bias reduction between Muslims and Christians: Long-term Internet contact.
+                        <em>Computers in Human Behavior, 53,</em> 435-442.
+                        <a href="http://www.sciencedirect.com/science/article/pii/S0747563215003830" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/chb2015.pdf" class="btn-text">PDF</a>
+                        <br>
+                        <br> White, F. A., Harvey, L., & Abu-Rayya, H. M. (2015). Improving intergroup relations in the Internet
+                        age: A critical review.
+                        <em>Review of General Psychology, 19,</em> 129-139.
+                        <a href="http://psycnet.apa.org/psycinfo/2015-22397-001/" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/white_gpr_2015a.pdf" class="btn-text">PDF</a>
+                        <br>
+                        <br> White, F. A., Harvey, L., & Verrelli, S. (2015). Including both voices: A new bidirectional framework
+                        for understanding and improving intergroup relations.
+                        <em>Australian Psychologist, 50,</em> 421-433.
+                        <a href="http://onlinelibrary.wiley.com/doi/10.1111/ap.12108/abstract" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/bidirectional_framework.pdf" class="btn-text">PDF</a>
+                        <br>
+                        <br> White, F. A., Hayes, B., & Livesey, D. (2015).
+                        <em>Developmental psychology: From infancy to adulthood</em> (4th Ed.). Sydney: Pearson Education Australia.
+                        <a href="http://www.pearson.com.au/products/S-Z-White-Fiona-Et-Al/Developmental-Psychology-From-Infancy-to-Adulthood/9781486018277?R=9781486018277"
+                            class="btn-text">Abstract</a>
+                        <br>
+                        <br>
+                    </div>
+                </li>
+
+                <!-- 2014 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2014</time> Abu-Rayya, H. M., & White. F. A. (2014). Acculturation orientations of Anglo-Australians
+                        towards Australian Muslims. In A.W. Ata (Ed.,)
+                        <em>Education, Integration, Challenges: A case of Australian Muslims.</em> Melbourne, David Powell Publishing.
+                        <br>
+                        <br> Priest, N, Walton, J, White, F. A., Kowal, E, Baker, A, & Paradies, Y. (2014). Understanding the
+                        complexities of ethnic-racial socialization processes for both minority and majority groups: A 30-year
+                        review.
+                        <em>International Journal of Intercultural Relations, 43,</em> 139-155.
+                        <a href="http://www.sciencedirect.com/science/article/pii/S0147176714000807" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/priest_et_al..pdf" class="btn-text">PDF</a>
+                        <br>
+                        <br> White, F. A., Abu-Rayya, H., & Weitzel, C. (2014). Achieving twelve-months of intergroup bias reduction:
+                        The dual identity-electronic contact (DIEC) experiment.
+                        <em>International Journal of Intercultural Relations, 38,</em> 158-163.
+                        <a href="http://www.sciencedirect.com/science/article/pii/S0147176713000849" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/white_et_al._2014.pdf" class="btn-text">PDF</a>
+                        <br>
+                        <br> Walton, J., Priest, N., Kowal, E., White, F. A., Brickwood, K., Fox, B., & Paradies, Y. (2014).
+                        Talking culture? Egalitarianism, color-blindness and racism in Australian elementary schools.
+                        <em>Teaching and Teacher Education, 9,</em> 112-122.
+                        <a href="http://www.sciencedirect.com/science/article/pii/S0742051X14000055" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/walton_et_al.pdf" class="btn-text">PDF</a>
+                    </div>
+                </li>
+
+                <!-- 2013 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2013</time> Abu-Rayya, H. M., & White. F. A. (2013). Acculturation orientations of Anglo-Australians
+                        towards Australian Muslims. In A.W. Ata (Ed.,)
+                        <em>Education, Integration, Challenges: A case of Australian Muslims.</em> Melbourne, David Powell Publishing.
+                        <br>
+                        <br> White, F. A., Hayes, B., & Livesey, D. (2013).
+                        <em>Developmental psychology: From infancy to adulthood</em> (3rd Ed.). Sydney: Pearson Education Australia.
+                        <a href="http://www.pearson.com.au/products/S-Z-White-Fiona-Et-Al/Developmental-Psychology/9781442550094?R=9781442550094"
+                            class="btn-text">Abstract</a>
+                    </div>
+                </li>
+
+                <!-- 2012 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2012</time> White, F. A., & Abu-Rayya, H. (2012). A dual identity-electronic contact (DIEC) experiment
+                        promoting short- and long-term intergroup harmony.
+                        <em>Journal of Experimental Social Psychology, 48,</em> 597-608.
+                        <a href="http://www.sciencedirect.com/science/article/pii/S0022103112000108" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/white_and_abu_rayya_(2012).pdf" class="btn-text">PDF</a>
+                    </div>
+                </li>
+
+                <!-- 2011 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2011</time> White, F. A. (2011). The social psychology of intergroup harmony and the education of
+                        psychologically literate citizens. In J. Cranney and D. S. Dunn (Eds.),
+                        <em>The Psychologically Literate Citizen: Foundations and Global Perspectives,</em> (pp. 56-71). New
+                        York: Oxford University Press.
+                        <a href="http://oxfordindex.oup.com/view/10.1093/acprof:oso/9780199794942.003.0025" class="btn-text">Abstract</a>
+                    </div>
+                </li>
+
+                <!-- 2010 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2010</time> Abu-Rayya, H., & White, F. A. (2010). Acculturation orientations and religious identity
+                        as predictors of Anglo-Australians' attitudes towards Australian Muslims.
+                        <em>International Journal of Intercultural Relations, 34,</em> 592-599.
+                        <a href="http://www.sciencedirect.com/science/article/pii/S0147176710000106" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/aburayya_&_white.pdf" class="btn-text">PDF</a>
+                        <br>
+                        <br> White, F. A., Hayes, B., & Livesey, D. (2010).
+                        <em>Developmental psychology: From infancy to adulthood</em> (2nd Ed.). Sydney: Pearson Education Australia.
+                        <a href="http://wps.pearsoned.com.au/au_hss_white_devpsych_2/" class="btn-text">Abstract</a>
+                    </div>
+                </li>
+
+                <!-- 2009 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2009</time> White, F. A., Wootton, B., Man, J., Diaz, H., Rasiah, J., Swift, E., & Wilkinson, A.
+                        (2009). Adolescent racial prejudice development: The role of friendship quality and interracial contact.
+                        <em>International Journal of Intercultural Relations, 33,</em> 524-534.
+                        <a href="http://www.sciencedirect.com/science/article/pii/S0147176709000637" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/white_et_al_(2009).pdf" class="btn-text">PDF</a>
+                    </div>
+                </li>
+
+                <!-- 2008 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2008</time> White, F. A., Charles, M., & Nelson, J. (2008). The role of persuasive arguments in changing
+                        affirmative action attitudes and expressed behavior in higher education.
+                        <em>Journal of Applied Psychology</em>, 93, 1271-1286.
+                        <a href="http://www.ncbi.nlm.nih.gov/pubmed/19025247" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/white_et_al_2008.pdf" class="btn-text">PDF</a>
+                        <br>
+                        <br> Church, A. T., Anderson-Harumi, C. A., del Prado, A. M., Curtis, G., Tanaka-Matsumi, J., Valdez-Medina,
+                        J. L., Mastor, K. A.,White, F. A., Miramontes, L. A., & Katigbak, M. S. (2008) Culture, cross-role
+                        consistency, and adjustment: Testing trait and cultural psychology perspectives.
+                        <em>Journal of Personality and Social Psychology</em>, 95, 739-755.
+                        <a href="http://www.ncbi.nlm.nih.gov/pubmed/18729706" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/church_et_al_(2008).pdf" class="btn-text">PDF</a>
+                    </div>
+                </li>
+
+                <!-- 2007 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2007</time> Marx, B. R., Job, R. F. S., White, F. A., & Wilson, J. C. (2007). Moral comprehension
+                        and what it might tell us about moral reasoning and political orientation.
+                        <em>Journal of Moral Education, 36,</em> 199-219.
+                        <a href="http://www.tandfonline.com/doi/pdf/10.1080/03057240701325324" class="btn-text">Abstract</a>
+                        <br>
+                        <br> McGrane, J., & White, F. A. (2007). Differences in Anglo and Asian Australians' explicit and implicit
+                        prejudice and the attenuation of their implicit in-group bias.
+                        <em>Asian Journal of Social Psychology, 10,</em> 204-210.
+                        <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1467-839X.2007.00228.x/abstract" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/mcgrane_&_white.pdf" class="btn-text">PDF</a>
+                    </div>
+                </li>
+
+                <!-- 2006 -->
+
+                <li class="timeline__item">
+                    <div class="timeline__content">
+                        <time>2006</time> White, F. A., & Gleitzman, M. (2006). An examination of family socialisation processes
+                        as moderators of racial prejudice transmission between adolescents and their parents.
+                        <em>Journal of Family Studies, 12,</em> 247-260.
+                        <a href="http://www.tandfonline.com/doi/abs/10.5172/jfs.327.12.2.247#.VS9ZPPmUck0" class="btn-text">Abstract</a>
+                        <br>
+                        <br> Church, A. T., Katigbak, M.S., del Prado,A, M.,Ortiz, F.A., Mastor, K.A., Hurami, Y., Tanaka-Matsumi,J.,
+                        Vargas-Flores, J.J., Ibáñez-Reyes, J. White, F. A., Miramontes, L. G. Reyes, J. A.S., & Cabrera,
+                        H. F. (2006). Implicit theories and self-perceptions of traitedness across cultures: Toward integration
+                        of cultural and trait psychology perspectives.
+                        <em>Journal of Cross-Cultural Psychology, 37,</em> 694-716.
+                        <a href="http://jcc.sagepub.com/content/37/6/694.abstract" class="btn-text">Abstract</a> &nbsp;
+                        <a href="http://www.supirlab.com/uploads/2/6/9/4/26943269/church_et_al.pdf" class="btn-text">PDF</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+
+
+    <!-- OPPORTUNITIES SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+    <section class="section-opportunities" id="section-opportunities">
+
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary">
+                What You Can Do
+            </h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-1-of-2">
+
+                <h3 class="heading-tertiary">Doctoral and Masters Research Programs</h3>
+
+                <p class="paragraph u-margin-top-small">
+
+                    The SUPIR Lab welcomes both domestic and international candidates to pursue a rewarding higher research degree (including
+                    a Doctor of Philosophy or a Master of Science) within The University of Sydney's School of Psychology.
+                    The Lab provides students with a supportive and collaborative environment that helps nurture the critical
+                    mindset and diligent research approach necessary for them to succeed as future independent researchers.
+
+                </p>
+
+                <p class="paragraph">
+
+                    The School of Psychology offers a well-resourced and stimulating intellectual environment for research students and offers
+                    competitive top-up scholarships, teaching fellowships, and financial support to attend national and international
+                    conferences.
+                    <a href="http://www.psych.usyd.edu.au/future_students/msc_phd/index.shtml" class="btn-text">More information</a>.
+
+                </p>
+
+                <p class="paragraph">
+
+                    Research projects can cover any topic in the extensive field of prejudice, diversity, and intergroup relations.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-1-of-2">
+
+                <p class="paragraph">
+
+                    Examples of current and previous research topics include:
+
+                </p>
+
+                <div class="opportunities">
+                    <ul class="opportunities__list">
+                        <li class="opportunities__item">
+                            <span class="opportunities__span">01</span> The creation of more inclusive classrooms for sexual minority and gender non-conforming
+                            adolescents.
+                        </li>
+                        <li class="opportunities__item">
+                            <span class="opportunities__span">02</span> The effect of stereotypicality in reducing public stigma against schizophrenia, depression,
+                            and substance abuse disorder, and self-stigma in mental illness.
+                        </li>
+                        <li class="opportunities__item">
+                            <span class="opportunities__span">03</span> The role of political ideology in intergroup prejudice.
+                        </li>
+                        <li class="opportunities__item">
+                            <span class="opportunities__span">04</span> The stigmatised feminist identity.
+                        </li>
+                        <li class="opportunities__item">
+                            <span class="opportunities__span">05</span> Bicultural identification and racial discrimination.
+                        </li>
+                        <li class="opportunities__item">
+                            <span class="opportunities__span">06</span> The significance of attitudinal ambivalence to attitude theory and measurement.
+                        </li>
+                        <li class="opportunities__item">
+                            <span class="opportunities__span">07</span> Understanding the relationship between moral reasoning and political orientation.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="row">
+
+            <div class="col-1-of-2">
+
+                <h3 class="heading-tertiary">Undergraduate Honours' Programs</h3>
+
+                <p class="paragraph u-margin-top-small">
+
+                    The SUPIR Lab encourages undergraduate students to undertake their Honours’ empirical project under the supervision of principal
+                    investigator, Professor Fiona White. The Lab will provide students with a great research environment
+                    and a nurturing support network to guide them successfully through their Honours' year.
+
+                    <a href="http://www.psych.usyd.edu.au/future_students/honours/index.shtml" class="btn-text">More information</a>.
+
+
+                </p>
+
+            </div>
+
+
+            <div class="col-1-of-2">
+
+                <p class="paragraph">
+
+                    Examples of current and previous research topics include:
+
+                </p>
+
+                <div class="opportunities">
+                    <ul class="opportunities__list">
+                        <li class="opportunities__item">
+                            <span class="opportunities__span">01</span> Using perspective-taking and empathetic listening to reduce prejudice against the elderly.</li>
+                        <li class="opportunities__item">
+                            <span class="opportunities__span">02</span> E-contact as a strategy to reduce stigma against people with schizophrenia and people
+                            with mental illness more broadly.
+                        </li>
+                        <li class="opportunities__item">
+                            <span class="opportunities__span">03</span> E-contact as a strategy to reduce homophobia in heterosexual males and females.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="u-center-text">
+
+                <h3 class="heading-tertiary heading-tertiary--small u-margin-bottom-med">Candidates interested in any of the aforementioned programs should email Professor Fiona White to discuss
+                    potential topics.</h3>
+
+                <a href="mailto:fiona.white@sydney.edu.au" class="btn btn--orange">Contact Fiona</a>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="u-center-text">
+
+                <h3 class="heading-tertiary">Volunteer Research Assistant Opportunities</h3>
+
+                <p class="paragraph">
+
+                    We are no longer accepting applications for volunteer research assistants for 2018. Please check back in November to apply
+                    for a position in 2019.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+
+    <section class="section-contact" id="section-contact">
+
+        <div class="u-center-text u-margin-bottom-big">
+            <h2 class="heading-secondary heading-secondary--white">
+                Where You Can Connect With Us
+            </h2>
+        </div>
+
+        <div class="row">
+
+
+
+            <div class="col-1-of-3">
+                <br><br><br><br><br><br><br><br>
+
+                <p class="paragraph u-center-text u-margin-top-med">
+
+                    You can contact us any time by email or on social media.
+
+                </p>
+
+                <p class="paragraph u-center-text">
+
+                    <strong>The SUPIR Lab</strong>
+                    <br> Brennan MacCallum Building (A18)
+                    <br> The University of Sydney NSW 2006 Australia
+
+                </p>
+
+                <!-- Email and Social Media Links -->
+
+                <p class="paragraph u-center-text">
+                    <a href="mailto:supirlab@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope-square"></i>
+                    </a>
+                    <a href="https://www.facebook.com/supirlab/" class="contact-link">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://twitter.com/supirlab" class="contact-link">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div class="col-2-of-3">
+
+                <!-- Group Photo -->
+
+                <div class="section-contact__photo-box u-center-text">
+                    <img src="img/Group Photo.jpg" class="section-contact__photo">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+    <footer class="footer">
+
+        <!-- University of Sydney Logo -->
+
+        <div class="footer__logo-box">
+            <img src="img/usyd_logo.png" alt="Full Logo" class="footer__logo">
+        </div>
+        <div class="row">
+
+            <!-- Website Credit - Please do not remove -->
+
+            <p class="footer__copyright">
+                This website was built and is maintained by
+                <a href="http://jcaim.me" class="footer__link hvr-underline-from-left">Jarin Yarbrough</a>.
+            </p>
+
+        </div>
+    </footer>
+
+
+
+    <!-- PEOPLE SECTION POP-UPS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- INSTRUCTIONS TO ADD A NEW POPUP:
+            1) Simply copy and paste the code of one of the member
+              pop-ups already made and paste it below the current
+              ones.
+            2) Replace all info with new member's info and be sure
+               to change the id="popup_membername"> to reflect the
+               new member. For example, popup_bob.
+            3) On the member card in the People Section, make sure
+               that the card links to the popup by insuring that the
+               link is pointed to <a href="#popup_bob">.
+
+
+        <!-- FIONA -->
+
+    <div class="popup" id="popup_fiona">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#fiona" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Professor Fiona White</h3>
+                <p class="popup__text u-margin-top-med">Fiona's work centers around the development of effective social-cognitive strategies to reduce the many types
+                    of stereotypes, prejudice, and discrimination that continue to pervade society. In doing so, her research
+                    aims to improve intergroup relations for both minority and majority groups in the short- and long-term.
+                    Of particular interest are intergroup strategies that integrate cooperative contact (i.e., imagined,
+                    extended, and E-contact) and identity recategorisation (i.e., common vs. dual identity).
+                    <div class="u-right-text">
+                        <a href="http://sydney.edu.au/science/people/fiona.white.php" class="btn-text u-margin-right-small">Website</a>
+                        <a href="mailto:fiona.white@sydney.edu.au" class="btn-text u-margin-right-small">Email</a>
+                        <a href="https://scholar.google.com.au/citations?user=-yuZ1fQAAAAJ&hl=en" class="btn-text u-margin-right-small">Google Scholar</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LAUREN -->
+
+    <div class="popup" id="popup_lauren">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#lauren" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Lauren J. Harvey</h3>
+                <p class="popup__text u-margin-top-med">Lauren is a third year doctoral and masters of clinical psychology student. For her Honours' project in 2012,
+                    she devised a novel E-contact paradigm, whereby participants were vicariously exposed to intergroup contact
+                    online. Currently, she has been assisting in devising, piloting, and testing a new E-contact paradigm.
+                    Coming from a multicultural background herself, her research interests include: the impact of stigma
+                    and immigration on mental health outcomes, online interventions to promote behavioural change, and cognitive
+                    recategorisation strategies to facilitate prejudice reduction and acculturation.
+                    <div class="u-right-text">
+                        <a href="mailto:lhar4124@uni.sydney.edu.au" class="btn-text u-margin-right-small">Email</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- RUTH -->
+
+    <div class="popup" id="popup_ruth">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#ruth" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Ruth Kuntzman</h3>
+                <p class="popup__text u-margin-top-med">Ruth is a first year doctoral student. Her research focuses on creating more inclusive K-12 classroom environments
+                    for sexual minority and gender non-conforming youth. For her master’s degree in sexuality studies, her
+                    research involved creating, implementing, and assessing the effects of a gender and sexuality workshop
+                    for K-12 educators. Her current research focuses on the primary and secondary school experiences of sexual
+                    minority and gender non-conforming young adults.
+                    <div class="u-right-text">
+                        <a href="mailto:ruth.kuntzman@sydney.edu.au" class="btn-text u-margin-right-small">Email</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- RACHEL -->
+
+    <div class="popup" id="popup_rachel">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#rachel" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Rachel Maunder</h3>
+                <p class="popup__text u-margin-top-med">Rachel is a second year doctoral student. She is interested in improving the lives of sexual minorities and
+                    people with mental illnesses by reducing prejudice and discrimination against these groups. She aims
+                    to do so by connecting majority and minority group members on online chat platforms. She is hopeful that
+                    her research will be able to inform practical, community strategies and that it will be able to be used
+                    to improve social relations in Australia and internationally.
+                    <div class="u-right-text">
+                        <a href="mailto:rachel.maunder@sydney.edu.au" class="btn-text u-margin-right-small">Email</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- STEFANO -->
+
+    <div class="popup" id="popup_stefano">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#stefano" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Stefano Verrelli</h3>
+                <p class="popup__text u-margin-top-med">Stefano is a third year doctoral student with broad research interests and a passion for science education.
+                    He is currently investigating the sociocognitive factors that influence stereotyping, prejudice, and
+                    discrimination.
+                    <div class="u-right-text">
+                        <a href="mailto:stefano.verrelli@sydney.edu.au" class="btn-text u-margin-right-small">Email</a>
+                        <a href="https://twitter.com/stefano3141" class="btn-text u-margin-right-small">Twitter</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ELISE -->
+
+    <div class="popup" id="popup_elise">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#elise" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Elise Boccanfuso</h3>
+                <p class="popup__text u-margin-top-med">Elise is currently studying honours in psychology after completing a Bachelor of Science and Bachelor of
+                    Arts. Their research focuses on prejudice towards people who are transgender or gender non-conforming.
+                    They aim to work as a clinical psychologist in settings of social injustices/human rights abuses, where
+                    it is not uncommon for people to suffer due to the prejudice (in its various forms) of others.
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PETA -->
+
+    <div class="popup" id="popup_peta">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#peta" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Peta O'Flynn</h3>
+                <p class="popup__text u-margin-top-med">Peta is currently working towards Honours in Psychology. Her research in 2018 explores aspects of public stigma toward members of same-sex families and possible strategies to reduce this stigma. Peta worked previously in research communications in international development and Aboriginal and Torres Strait Islander health. 
+            </div>
+        </div>
+    </div>
+    
+    <!-- KARINA -->
+
+    <div class="popup" id="popup_karina">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#karina" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Karina Zola</h3>
+                <p class="popup__text u-margin-top-med">Karina is a third year Bachelor of Psychology Student. She is very interested in clinical and social psychology
+                    and how one's group relations can impact their mental well-being. She grew up in an international environment
+                    where prejudice was practically non-existent and is therefore intrigued by prejudice formation and excited
+                    to discover strategies to reduce prejudice and bias.
+            </div>
+        </div>
+    </div>
+        
+      <!-- DIANA -->
+
+    <div class="popup" id="popup_diana">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#diana" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Diana Vassilenko</h3>
+                <p class="popup__text u-margin-top-med">Diana is a second-year Bachelor of Arts student. She is majoring in Psychology and Japanese studies. Diana is interested in different cultures and is interested in learning about strategies for reducing prejudice and bias that form between the members of the groups and how they appear in the first place.
+            </div>
+        </div>
+    </div>
+        
+       <!-- CAGLA -->
+
+    <div class="popup" id="popup_cagla">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#cagla" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Cagla Tekin </h3>
+                <p class="popup__text u-margin-top-med">Cagla is a third year Bachelor of Arts student, majoring in Psychology, She is interested in understanding processes leading to prejudice formation and wants to contribute to reduction of prejudice and bias. 
+            </div>
+        </div>
+    </div>
+        
+       <!-- VICTORIA -->
+
+    <div class="popup" id="popup_victoria">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#victoria" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Victoria Basile</h3>
+                <p class="popup__text u-margin-top-med">Victoria is a third year Bachelor of Psychology student with a interest in interpersonal relationships and cross-cultural psychology. She has a Master of Public Health, and thinks it's important to design interventions strongly based on psychological principles. Victoria loves discussing current affairs, and hence finds the work at the SUPIR lab on discrimination and prejudice not only fascinating, but also relevant to society at large. 
+            </div>
+        </div>
+    </div>
+        
+       <!-- OSCAR -->
+
+    <div class="popup" id="popup_oscar">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#oscar" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Oscar Leppan</h3>
+                <p class="popup__text u-margin-top-med">Oscar is a third year Bachelor of Psychology student with a keen interest in the processes that bring about both positive and negative intergroup relations. Working as a VRA, he hopes to further explore long-term strategies for intergroup prejudice reduction.
+            </div>
+        </div>
+    </div>
+    
+       <!-- WATHAN -->
+
+    
+    <div class="popup" id="popup_wathan">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#wathan" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Wathan Seezar Kyaw</h3>
+                <p class="popup__text u-margin-top-med">Wathan is a third year undergraduate student majoring in psychology and neuroscience. She is interested in learning about and reducing social problems including hate and intergroup conflict between different social groups. She also enjoys learning about the brain and how it controls our everyday behaviour, choices and decisions. She hopes to use her knowledge of psychology to assist in improving people’s mental health and consequently, their lives.
+            </div>
+        </div>
+    </div>
+    
+       <!-- CELESTE -->
+
+    
+    <div class="popup" id="popup_celeste">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#celeste" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Celeste Zeng</h3>
+                <p class="popup__text u-margin-top-med">Celeste is a second year Bachelor of Psychology student. She is passionate about reducing prejudice towards women and the LGBT community - a cause that she is devoted to. She is also interested in exploring the intergroup dynamics in a multicultural environment.
+            </div>
+        </div>
+    </div>
+    
+       <!-- ALICE -->
+
+    
+    <div class="popup" id="popup_alice">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#alice" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Alice Chappell</h3>
+                <p class="popup__text u-margin-top-med">Alice is in her third year of a Bachelor of Liberal Arts and Science degree, majoring in Psychology. She is also a children’s TV producer. Alice is interested in investigating how prejudice and stereotype reduction strategies in the early stages of life can have beneficial and lasting effects.
+            </div>
+        </div>
+    </div>
+    
+       <!-- REBECCA -->
+
+    
+    <div class="popup" id="popup_rebecca">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#rebecca" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Rebecca Crabb</h3>
+                <p class="popup__text u-margin-top-med">Rebecca is a third year Bachelor of Psychology student. She is interested in social, clinical and developmental psychology. Rebecca is looking forward to examining the many forms of human relations and group dynamics, and how these can lead to and impact prejudice, development and mental illness.
+            </div>
+        </div>
+    </div>
+
+       <!-- JESSIE -->
+
+    
+    <div class="popup" id="popup_jessie">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#jessie" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Jessie Wang</h3>
+                <p class="popup__text u-margin-top-med">Jessie is a fourth-year student studying a Bachelor of Psychology, having previously completed a Bachelor of Music. Having been lucky enough to have lived and travelled in different places, she has experienced places where racial prejudice is prevalent, and places where it's not. She is therefore interested in learning about the formation and reduction of racial prejudice. Through her work as a VRA, Jessie is also hoping to find  strategies to reduce prejudice towards those with a disability, as they are subject to some of the most severe forms of prejudice and discrimination.
+            </div>
+        </div>
+    </div>
+    
+       <!-- JENNIFER -->
+
+    
+    <div class="popup" id="popup_jennifer">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#jennifer" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Jennifer Ma</h3>
+                <p class="popup__text u-margin-top-med">Jennifer is a third year Bachelor of Psychology student with a strong interest in social, mental health, and learning psychology. In particular, she is passionate about reducing the stigma surrounding mental illness, so that individuals affected by mental illness can feel more comfortable to seek help and support. Also, having grown up in a multicultural community, she values diversity and the enriching relationships that can result when cultures come together. As such, she is keen on contributing to research relating to the reduction of prejudice and discrimination. She believes that if we change our perspective, we can change our world.
+            </div>
+        </div>
+    </div>
+    
+       <!-- MIREI -->
+
+    
+    <div class="popup" id="popup_mirei">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#mirei" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Mirei Takashiba</h3>
+                <p class="popup__text u-margin-top-med">Mirei is an undergraduate student in a Bachelor of Science degree majoring in Psychology. She first came across the subject area by taking a psychology elective during her previous degree in Engineering. Having loved learning about cognition and behaviour, she decided to switch for good and take up a Psychology major. She is currently in her final year, studying personality and social psych. Mirei is passionate about social equality, women’s rights and is a supporter of minority groups. In her spare time she likes to cook, dance and tend to her pot plants. 
+            </div>
+        </div>
+    </div>
+    
+       <!-- SUSANNA -->
+
+    
+    <div class="popup" id="popup_susanna">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#susanna" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Susanna Feng</h3>
+                <p class="popup__text u-margin-top-med">Susanna is a third year Bachelor of Psychology student. Having worked in an administrative role in a Psychology practice, she is extremely interested in the stigma around Mental Health issues and how to reduce prejudice towards people with mental illnesses. 
+            </div>
+        </div>
+    </div>
+    
+       <!-- MAY-ZIN -->
+
+    
+    <div class="popup" id="popup_mayzin">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#mayzin" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">May-Zin Khine</h3>
+                <p class="popup__text u-margin-top-med">May-Zin completed her honours in psychology in 2017. Her honours project was on reducing intergenerational resource threat and ageism. She is interested in investigating how technology and media can be utilised in promoting intergroup harmony and facilitating behavioural change. 
+            </div>
+        </div>
+    </div>
+    
+       <!-- BETTY -->
+
+    
+    <div class="popup" id="popup_betty">
+        <div class="popup__content">
+            <div class="popup__left">
+                &nbsp;
+            </div>
+
+            <div class="popup__right">
+                <a href="#betty" class="popup__close">&times;</a>
+                <h3 class="heading-tertiary u-margin-bottom-small u-border-bottom">Dr. Betty Luu</h3>
+                <p class="popup__text u-margin-top-med">Betty completed her PhD in 2014, with Professor Fiona White as part of her supervisory team. She is currently a Research Associate at the Institute of Open Adoption Studies within the School of Education and Social Work at the university. While her background is in developmental psychology, she has contributed to research projects within a range of topics including: early childhood education, open adoption from out-of-home care, and intergroup contact and prejudice. Betty has a firm research interest in understanding how the early environment can best support children’s development, and what can be done to tackle social inequality and disadvantage. 
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

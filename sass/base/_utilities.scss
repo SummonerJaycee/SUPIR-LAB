@@ -1,0 +1,47 @@
+// TEXT ALIGNMENT UTILITIES
+
+.u-center-text { text-align: center !important; }
+.u-right-text { text-align: right !important; }
+.u-left-text { text-align: left !important; }
+
+// NO TEXT DECORATION
+
+.u-no-txt-deco { text-transform: none !important; }
+
+// UNDERLINES
+
+.u-underline-primary { border-bottom: 2px solid $color-primary; width: 100%;}
+
+
+// BORDERS
+
+.u-border-left { border-left: .1rem solid $color-grey-dark-2; }
+.u-border-right { border-right: .1rem solid $color-grey-dark-2; }
+.u-border-bottom { border-bottom: .1rem solid $color-grey-dark-2; }
+.u-border-top { border-top: .1rem solid $color-grey-dark-2; }
+
+// BOTTOM MARGIN UTILITIES
+
+.u-margin-bottom-small { margin-bottom: 1.5rem !important; }
+.u-neg-margin-bottom-small { margin-bottom: -1.5rem !important; }
+.u-margin-bottom-med { margin-bottom: 4rem !important; }
+.u-neg-margin-bottom-med { margin-bottom: -4rem !important; }
+.u-margin-bottom-big { margin-bottom: 8rem !important; }
+.u-neg-margin-bottom-big { margin-bottom: -8rem !important; }
+.u-margin-bottom-huge { margin-bottom: 12rem !important; }
+
+// TOP MARGIN UTILITIES
+
+.u-margin-top-small { margin-top: 1.5rem !important; }
+.u-margin-top-med { margin-top: 4rem !important; }
+.u-margin-top-big { margin-top: 8rem !important; }
+.u-margin-top-huge { margin-top: 10rem !important; }
+.u-neg-margin-top-huge { margin-top: -10rem !important; }
+
+
+// RIGHT MARGIN UTILITIES
+.u-margin-right-small { margin-right: 1rem; }
+
+// LEFT  MARGIN UTILITIES
+.u-margin-left-small { margin-right: 2rem; }
+.u-margin-left-big { margin-right: 8rem; }

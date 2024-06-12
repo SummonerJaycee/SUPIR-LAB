@@ -1,0 +1,126 @@
+// Copyright (c) 2018 by Envato Tuts+ (https://codepen.io/tutsplus/pen/QNeJgR)
+
+.timeline ul {
+    overflow-x: hidden;
+    background: $color-white;
+    padding: 50px 0;
+    li {
+      list-style-type: none;
+      position: relative;
+      width: 6px;
+      margin: 0 auto;
+      padding-top: 50px;
+      background: $color-grey-dark-3;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: inherit;
+      }
+      div {
+        position: relative;
+        bottom: 0;
+        width: 400px;
+        padding: 15px;
+        background: $color-white;
+        color: $color-grey-dark-4;
+        font-size: $default-font-size;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 7px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+        }
+      }
+      &:nth-child(odd) div {
+        left: 45px;
+        &::before {
+          left: -15px;
+          border-width: 8px 16px 8px 0;
+          border-color: transparent $color-primary-dark transparent transparent;
+        }
+      }
+      &:nth-child(even) div {
+        left: -439px;
+        &::before {
+          right: -15px;
+          border-width: 8px 0 8px 16px;
+          border-color: transparent transparent transparent $color-primary-dark;
+        }
+      }
+    }
+  }
+  
+  time {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  /* EFFECTS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  .timeline ul li {
+    &::after {
+      transition: background .5s ease-in-out;
+    }
+    &.in-view::after {
+      background: $color-primary-dark;
+    }
+    div {
+      visibility: hidden;
+      opacity: 0;
+      transition: all .5s ease-in-out;
+    }
+    &:nth-child(odd) div {
+      transform: translate3d(200px, 0, 0);
+    }
+    &:nth-child(even) div {
+      transform: translate3d(-200px, 0, 0);
+    }
+    &.in-view div {
+      transform: none;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  /* GENERAL MEDIA QUERIES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  
+  @media screen and (max-width: 900px) {
+    .timeline ul li {
+      div {
+        width: 250px;
+      }
+      &:nth-child(even) div {
+        left: -289px;
+        /*250+45-6*/
+      }
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .timeline ul li {
+      margin-left: 20px;
+      div {
+        width: calc(100vw - 91px);
+      }
+      &:nth-child(even) div {
+        left: 45px;
+        &::before {
+          left: -15px;
+          border-width: 8px 16px 8px 0;
+          border-color: transparent $color-primary-dark transparent transparent;
+        }
+      }
+    }
+  }

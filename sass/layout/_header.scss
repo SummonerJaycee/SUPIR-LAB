@@ -1,0 +1,81 @@
+.header {
+    background-image: linear-gradient(to right bottom,
+    rgba($color-grey-dark-5, 0.6),
+    rgba($color-grey-dark-4, 0.6)),
+     url(../img/usyd.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    padding: 10rem;
+
+    &__text-box {
+        display: block;
+        text-align: left;
+        margin-left: -13rem;
+
+        @include respond(small-desktop) {
+            margin-left: 2rem;
+        }
+
+        @include respond(tab-land) {
+            margin-left: -4rem;
+        }
+    }
+
+    &__span {
+        color: $color-primary;
+        font-weight:700;
+        font-style: italic;
+        padding-right: .5rem;
+        text-transform: uppercase;
+    }
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        right: 4rem;
+    }
+
+    &__logo {
+        height: 10rem;
+    }
+
+    &__animation {
+
+        &-1 {
+            animation:moveInRight 2s ease-out;
+            animation-delay: .5s;
+            animation-fill-mode: backwards;
+        }
+
+        &-2 {
+            animation: moveInRight 2s ease-out;
+            animation-delay: .7s;
+            animation-fill-mode: backwards;
+        }
+
+        &-3 {
+            animation: moveInRight 2s ease-out;
+            animation-delay: .9s;
+            animation-fill-mode: backwards;
+        }
+
+        &-4 {
+            animation: moveInRight 2s ease-out;
+            animation-delay: 1.1s;
+            animation-fill-mode: backwards;
+        }
+
+        &-5 {
+            animation: moveInRight 2s ease-out;
+            animation-delay: 1.3s;
+            animation-fill-mode: backwards;
+        }
+
+        &-6 {
+            animation: moveInRight 2s ease-out;
+            animation-delay: 1.5s;
+            animation-fill-mode: backwards;
+        }
+    }
+}
